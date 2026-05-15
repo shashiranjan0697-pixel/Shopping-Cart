@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
@@ -16,6 +16,7 @@ const Navbar = () => {
         <img 
         className="p-1 aspect-auto"
         src="https://m.media-amazon.com/images/G/33/marketing/prime/2022PrimeBrand/Logos/Prime_Logo_RGB_Prime_Blue_MASTER._CB542734779_.png"
+        alt="Amazon Prime Logo"
         width={80}  height={50} loading="lazy"/>
       </NavLink>
       <div className="w-full h-full flex justify-between max-w-48  p-2 items-center">

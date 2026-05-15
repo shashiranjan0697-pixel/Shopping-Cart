@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Spinner from "../components/Spinner";
 import Product from "../components/Product";
-import { useSelector } from "react-redux";
 
 
 const Home = () => {
@@ -42,14 +41,16 @@ const Home = () => {
       loading ? <Spinner/> : 
       posts.length >0 ?
       (posts.map((post)=>(
-        <div className="w-[30%] p-4  border-[5px] shadow-lg mx-4 my-8 hover:scale-[1.1] 
+        <div 
+        key={post.id}
+        className="w-[30%] p-4  border-[5px] shadow-lg mx-4 my-8 hover:scale-[1.1] 
         transition-all duration-100 rounded-lg">
-          <Product post={post} key={post.id} />
+          <Product post={post}  />
         </div>
       ))):
-      <p  className="w-full h-screen flex justify-center items-center">
-        <div className=" font-bold text-2xl">No Data Found</div>
-      </p>
+      <div className="w-full h-screen flex justify-center items-center">
+        <div className="font-bold text-2xl">No Data Found</div>
+      </div>
     }
   </div>
     );

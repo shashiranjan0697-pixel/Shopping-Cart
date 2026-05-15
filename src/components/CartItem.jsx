@@ -1,6 +1,6 @@
 
 import { FaTrash } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import toast from "react-hot-toast"
 import { remove } from "../redux/Slices/CartSlice";
 
@@ -20,7 +20,11 @@ const CartItem = ({item}) => {
   return( 
   <div className="w-full border-b-4 border-gray-400 gap-x-4 flex p-4 justify-center items-center">
     <div className="w-1/1 ">
-      <img  src={item.images} width={350} height={350}   loading="lazy"/>
+      <img  src={item.images} 
+            alt=""
+            width={350} 
+            height={350}   
+            loading="lazy"/>
     </div>
     <div>
       <h1 className=" font-semibold text-lg text-wrap">{item.title}</h1>

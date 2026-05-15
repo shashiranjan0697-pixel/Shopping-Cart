@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast"
 import { remove, add } from "../redux/Slices/CartSlice";
@@ -17,7 +16,7 @@ const Product = ({post}) => {
     dispatch(remove(post.id));
     toast.error("Item Removed from cart")
   }
-  const inCart=cart.some((p)=> p.id==post.id);
+  const inCart=cart.some((p)=> p.id===post.id);
 
   return( 
   <div className="flex flex-col">
@@ -27,8 +26,12 @@ const Product = ({post}) => {
     </div>
     <p className="text-xs text-gray-500 text-wrap py-2">{post.description}</p>
     <div className="flex justify-center items-center aspect-auto">
-      <img src={post.images} width={200} height={200} loading="lazy" 
-      className="p-2" />
+      <img src={post.images} 
+            alt=""
+            width={200} 
+            height={200} 
+            loading="lazy" 
+            className="p-2" />
     </div>
     <div className=" w-full flex justify-between px-2">
 
